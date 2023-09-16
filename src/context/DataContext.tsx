@@ -36,12 +36,13 @@ export const DataProvider: React.FC<{ children: ReactNode }> = ({
     }
   }, []);
 
-  useEffect(() => {
-    localStorage.setItem("data", JSON.stringify(items));
-  }, [items]);
+  // useEffect(() => {
+  //   localStorage.setItem("data", JSON.stringify(items));
+  // }, [items]);
 
   const insertItem = (item: Item) => {
-    setItems([...items, item]);
+    setItems([ ...items, item ]);
+    localStorage.setItem("data", JSON.stringify([...items, item]));
   };
 
   const selectItem = (index: number) => {
@@ -54,6 +55,7 @@ export const DataProvider: React.FC<{ children: ReactNode }> = ({
       newItems.splice(selectedItemId, 1);
       setItems(newItems);
       setSelectedItemId(null);
+      localStorage.setItem("data", JSON.stringify(newItems));
     }
   };
 
