@@ -1,12 +1,13 @@
 import React from "react";
-import Menu from "./components/Menu";
-import List from "./components/List";
+import Menu from "./components/Menu/Menu";
+import List from "./components/List/List";
 import { DataProvider } from "./context/DataContext";
+import "./App.css";
 
 const App: React.FC = () => {
   return (
     <DataProvider>
-      <div>
+      <div className="app">
         <Menu />
         <List />
       </div>

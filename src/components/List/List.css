@@ -1,0 +1,24 @@
+.list {
+  border: 1px solid #595959;
+  border-radius: 5px;
+  width: 480px;
+}
+
+.selected {
+  background-color: #217346;
+}
+
+.list-table {
+  width: 100%;
+  border-spacing: 0;
+}
+
+.list-table-thead {
+  background: #595959;
+  
+}
+
+tr th {
+    font-weight: normal;
+    text-align: center;
+  }
