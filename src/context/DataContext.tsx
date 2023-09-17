@@ -35,11 +35,7 @@ export const DataProvider: React.FC<{ children: ReactNode }> = ({
       setItems(JSON.parse(storedData));
     }
   }, []);
-
-  // useEffect(() => {
-  //   localStorage.setItem("data", JSON.stringify(items));
-  // }, [items]);
-
+  
   const insertItem = (item: Item) => {
     setItems([ ...items, item ]);
     localStorage.setItem("data", JSON.stringify([...items, item]));

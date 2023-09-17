@@ -35,6 +35,7 @@
 
 .menu-input:focus {
   border: solid #217346;
+  padding: 8px;
 }
 
 .menu-button {
@@ -62,6 +63,61 @@
   margin: auto 0;
 }
 
+/* Custom input buttons  */
+
+.menu-age-input {
+  width: 100%;
+  display: flex;
+  /* border: 1px #595959 solid; */
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.age-input {
+  flex-grow: 1;
+  /* border: none;   */
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  	-moz-appearance: textfield;
+	-webkit-appearance: textfield;
+	appearance: textfield;
+}
+
+.age-input::-webkit-outer-spin-button, .age-input::-webkit-inner-spin-button {
+  display: none;
+}
+
+.input-button {
+  height: 100%;
+  width: 20px;
+  padding: 12px;
+  background: #595959;
+  border: none;
+  position: relative;
+  cursor: pointer;
+}
+
+.increment {
+  transform: rotate(180deg);
+}
+
+.input-button:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.menu-age-input .input-button:after {
+  display: block;
+  left: 10px;
+  top: 13px;
+  width: 5px;
+  height: 5px;
+  border: solid #ffffff;
+  border-width: 0 1px 1px 0;
+  transform: rotate(45deg);
+}
+
 /* Custom switch */
 
 .menu-checkbox {
@@ -73,11 +129,11 @@
 
 .menu-switch {
   background-color: #217346;
-  width: 55px;
-  height: 25px;
+  width: 50px;
+  height: 20px;
   border-radius: 16px;
   position: relative;
-  transition: 0.3s;
+  /* transition: 0.3s; */
   cursor: pointer;
 }
 
@@ -85,17 +141,17 @@
   content: "";
   font-weight: 900;
   background-color: #313131;
-  width: 15px;
-  height: 15px;
+  width: 12px;
+  height: 12px;
   position: absolute;
   border-radius: 50%;
-  top: 5px;
-  left: 5px;
+  top: 4px;
+  left: 4px;
   display: flex;
   justify-content: center;
   align-items: center;
   color: #000;
-  transition: 0.3s;
+  /* transition: 0.3s; */
 }
 
 .menu-checkbox:checked + .menu-switch {
@@ -104,7 +160,7 @@
 
 .menu-checkbox:checked + .menu-switch::before {
   content: "";
-  left: 35px;
+  left: 34px;
   color: #0075ff;
   background-color: #fff;
 }
@@ -116,17 +172,17 @@
   top: 0;
   left: 0;
   margin-left: 10px;
-  height: 25px;
-  width: 25px;
+  height: 20px;
+  width: 20px;
   background: #313131;
   border-radius: 5px;
-  border: #217346 solid;
-  transition: 0.3s;
+  border: #217346 solid 1px;
+  /* transition: 0.3s; */
 }
 
 .menu-label input:checked ~ .custom-checkbox {
   background: #217346;
-  transition: 0.3s;
+  /* transition: 0.3s; */
 }
 
 .custom-checkbox:after {
@@ -139,13 +195,71 @@
   display: block;
 }
 
-/* Style the checkmark/indicator */
 .menu-label .custom-checkbox:after {
-  left: 9px;
-  top: 2px;
+  left: 7px;
+  top: 0;
   width: 5px;
   height: 15px;
   border: solid #313131;
-  border-width: 0 0.15em 0.15em 0;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+/* Custom select */
+
+/* .menu-select {
+  font: inherit;
+  letter-spacing: inherit;
+  word-spacing: inherit;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+} */
+
+.menu-subscribed {
+  display: flex;
+  border-radius: 5px;
+  /* overflow: hidden; */
+  position: relative;
+}
+
+.menu-select {
+  flex-grow: 1;
+  /* border: none;   */
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.subscribed-options {
+  position: absolute;
+  background: #313131;
+  z-index: 999;
+  width: 265px;
+  top: 40px;
+  /* left: 5px; */
+}
+
+.subscribed-option {
+  padding: 5px 0;
+}
+
+.subscribed-option:hover {
+  background: #217346;
+  cursor: pointer;
+}
+
+.menu-subscribed .input-button {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.menu-subscribed .input-button:after {
+  display: block;
+  left: 10px;
+  top: 13px;
+  width: 5px;
+  height: 5px;
+  border: solid #ffffff;
+  border-width: 0 1px 1px 0;
   transform: rotate(45deg);
 }

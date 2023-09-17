@@ -2,6 +2,16 @@
   border: 1px solid #595959;
   border-radius: 5px;
   width: 480px;
+  overflow-y: scroll;
+}
+
+.list::-webkit-scrollbar {
+  width: 10px;
+  background: #595959;
+}
+
+.list::-webkit-scrollbar-thumb {
+  background: #217346;
 }
 
 .selected {
