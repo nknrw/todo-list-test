@@ -51,21 +51,23 @@ const Menu: React.FC = () => {
         <option value="Not Subscribed">Not Subscribed</option>
         <option value="Other">Other</option>
       </select>
-      <label>
+      <label className="menu-label">
         <input
           className="menu-checkbox"
           type="checkbox"
           checked={employed}
           onChange={() => setEmployed(!employed)}
         />
+        <div className="custom-checkbox"></div>
         Employed{" "}
       </label>
       <button className="menu-button" onClick={handleInsert}>
         Insert
       </button>
       <div className="menu-separator"></div>
-      <label>
-        <input className="menu-input" type="checkbox" />
+      <label className="menu-label">
+        <input className="menu-checkbox" type="checkbox" />
+        <div className="menu-switch"></div>
         Mode{" "}
       </label>
       <button className="menu-button" onClick={deleteItem}>
