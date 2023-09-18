@@ -1,5 +1,5 @@
 .list {
-  border: 1px solid #595959;
+  border: 1px solid var(--btn-color-dark);
   border-radius: 5px;
   width: 480px;
   overflow-y: scroll;
@@ -7,15 +7,23 @@
 
 .list::-webkit-scrollbar {
   width: 10px;
-  background: #595959;
+  background: var(--btn-color-dark);
+}
+
+body[data-theme='light'] .list::-webkit-scrollbar {
+  background: var(--btn-color-light);
 }
 
 .list::-webkit-scrollbar-thumb {
-  background: #217346;
+  background: var(--accent-color);
 }
 
 .selected {
-  background-color: #217346;
+  background-color: var(--accent-color);
+}
+
+body[data-theme='light'] .selected {
+  color: var(--text-color-dark);
 }
 
 .list-table {
@@ -25,8 +33,11 @@
 }
 
 .list-table-thead {
-  background: #595959;
-  
+  background: var(--btn-color-dark);
+}
+
+body[data-theme='light'] .list-table-thead {
+  background: var(--btn-color-light);
 }
 
 tr th {

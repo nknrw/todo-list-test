@@ -1,9 +1,15 @@
 .app {
-  background: #313131;
-  color: #ffffff;
   padding: 10px;
   height: 400px;
   width: 780px;
   display: flex;
   justify-content: space-between;
+}
+
+body[data-theme='light'] .app {
+  background-color: var(--bg-color-light);
+}
+
+body[data-theme='dark'] .app {
+  background-color: var(--bg-color-dark);
 }

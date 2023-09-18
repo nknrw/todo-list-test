@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import { useDataContext } from "../../context/DataContext";
 import "./Menu.css";
+import { useTheme } from "../../context/ThemeContext";
 
 const Menu: React.FC = () => {
   const { insertItem, deleteItem } = useDataContext();
+  const { theme, toggleTheme } = useTheme();
+
   const [name, setName] = useState("");
   const [age, setAge] = useState<number | undefined>(undefined);
   const [subscribed, setSubscribed] = useState("Subscribed");
@@ -51,6 +54,14 @@ const Menu: React.FC = () => {
   const handleSubscribedOptionClick = (option: string) => {
     setSubscribed(option);
     setShowSubscribedMenu(false);
+  };
+
+  const handleThemeToggle = () => {
+    toggleTheme();
+    // document.body.setAttribute(
+    //   "data-theme",
+    //   theme === "dark" ? "light" : "dark"
+    // );
   };
 
   return (
@@ -132,7 +143,12 @@ const Menu: React.FC = () => {
       </button>
       <div className="menu-separator"></div>
       <label className="menu-label">
-        <input className="menu-checkbox" type="checkbox" />
+        <input
+          className="menu-checkbox"
+          type="checkbox"
+          checked={theme === "light"}
+          onChange={handleThemeToggle}
+        />
         <div className="menu-switch"></div>
         Mode{" "}
       </label>

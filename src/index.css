@@ -1,3 +1,22 @@
+ :root {
+  /* Light */
+  --bg-color-light: #ffffff;
+  --text-color-light: #000000;
+  --btn-color-light: #cccccc;
+  
+  /* Dark */
+  --bg-color-dark: #313131;
+  --text-color-dark: #ffffff;
+  --btn-color-dark: #595959;
+  
+  --accent-color: #217346;
+}
+
+ * {
+  user-select: none;
+  font-size: 14px;
+ }
+ 
  html {
   height: 100%;
  }
@@ -6,12 +25,14 @@
   height: 100%;
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
+  color: var(--text-color-dark);
+ }
+
+ body[data-theme='light'] {
+  color: var(--text-color-light);
  }
 
  #root {
   height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   background: #000;
  }
